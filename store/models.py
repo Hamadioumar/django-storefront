@@ -22,9 +22,9 @@ class Customer(models.Model):
     MEMBERSHIP_GOLD = 'G'
 
     MEMBERSHIP_CHOICES = [
-        MEMBERSHIP_BRONZE, 'Bronze',
-        MEMBERSHIP_SILVER, 'Silver',
-        MEMBERSHIP_GOLD, 'Gold'
+        (MEMBERSHIP_BRONZE, 'Bronze'),
+        (MEMBERSHIP_SILVER, 'Silver'),
+        (MEMBERSHIP_GOLD, 'Gold')
     ]
     first_name = models.CharField(max_length=255)
     last_name =models.CharField(max_length=255)
@@ -41,9 +41,9 @@ class Order(models.Model):
     FAILED = 'F'
 
     STATUS_CHOICES = [
-        PANDING, 'Panding',
-        COMPLETE, 'Complete',
-        FAILED, 'Failed'
+        (PANDING, 'Panding'),
+        (COMPLETE, 'Complete'),
+        (FAILED, 'Failed')
     ]
     place_at = models.DateTimeField(auto_created=True)
     payment_status = models.CharField(max_length=1, choices=STATUS_CHOICES,default=PANDING)
